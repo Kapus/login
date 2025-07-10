@@ -57,7 +57,7 @@ redirectIfLoggedIn(); // Redirect if already logged in
             </form>
             
             <div class="form-links">
-                <a href="#forgot">Forgot Password?</a>
+                <a href="forgot_password.php">Forgot Password?</a>
                 <a href="register.php">Create New Account</a>
             </div>
         </div>

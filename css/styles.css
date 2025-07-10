@@ -59,6 +59,49 @@ body {
     border-radius: 4px;
 }
 
+/* Sub-Header Styles */
+.sub-header {
+    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
+    padding: 3px 0;
+    position: relative;
+}
+
+.sub-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-info {
+    font-size: 11px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.sub-header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.settings-icon {
+    font-size: 13px;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.settings-icon:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: rotate(45deg);
+}
+
 /* Main Content Styles */
 .main-content {
     padding: 40px 20px;
@@ -323,7 +366,61 @@ body {
     color: white;
 }
 
+.btn-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Edit Profile Styles */
+.edit-profile-sections {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.edit-section {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.edit-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 0;
+}
+
+.edit-form .btn {
+    align-self: flex-start;
+    margin: 10px 0 0 0;
+}
+
+/* Responsive adjustments for edit profile */
+@media (max-width: 768px) {
+    .edit-profile-sections {
+        gap: 20px;
+    }
+    
+    .edit-section {
+        padding: 20px;
+    }
 }

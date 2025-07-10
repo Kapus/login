@@ -21,3 +21,31 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </nav>
     </div>
 </header>
+
+<?php if ($is_logged_in): ?>
+<div class="sub-header">
+    <div class="sub-header-content">
+        <div class="page-info">
+            <?php
+            // Dynamic page information for logged in users
+            switch($current_page) {
+                case 'index.php':
+                    echo 'Welcome back to your dashboard';
+                    break;
+                case 'profile.php':
+                    echo 'Manage your account settings';
+                    break;
+                case 'edit_profile.php':
+                    echo 'Update your profile information';
+                    break;
+                default:
+                    echo 'Secure member area';
+            }
+            ?>
+        </div>
+        <div class="sub-header-actions">
+            <a href="edit_profile.php" class="settings-icon" title="Edit Profile">⚙️</a>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

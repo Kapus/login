@@ -21,29 +21,29 @@ if (!$user) {
     <?php include 'includes/header.php'; ?>
     
     <main class="main-content">
-        <div class="profile-container">
-            <h1>Welcome, <?php echo e($user['username']); ?>!</h1>
-            <div class="profile-info">
-                <div class="profile-item">
-                    <label>Username:</label>
-                    <span><?php echo e($user['username']); ?></span>
-                </div>
-                <div class="profile-item">
-                    <label>Email:</label>
-                    <span><?php echo e($user['email']); ?></span>
-                </div>
-                <div class="profile-item">
-                    <label>Member Since:</label>
-                    <span><?php echo date('F j, Y', strtotime($user['created_at'])); ?></span>
-                </div>
+        <h1>Welcome, <?php echo e($user['username']); ?>!</h1>
+        
+        <?php if (isset($_GET['success'])): ?>
+            <div class="success-message">
+                <?php
+                switch($_GET['success']) {
+                    case 'password_reset':
+                        echo 'Your password has been successfully reset and you have been logged in.';
+                        break;
+                    default:
+                        echo 'Action completed successfully.';
+                }
+                ?>
             </div>
-            
-            <div class="profile-actions">
-                <a href="#edit" class="btn btn-primary">Edit Profile</a>
-                <a href="#settings" class="btn btn-secondary">Settings</a>
-                <a href="auth/logout.php" class="btn btn-danger">Logout</a>
-            </div>
-        </div>
+        <?php endif; ?>
+        
+        <p><strong>Username:</strong> <?php echo e($user['username']); ?></p>
+        <p><strong>Email:</strong> <?php echo e($user['email']); ?></p>
+        <p><strong>Member Since:</strong> <?php echo date('F j, Y', strtotime($user['created_at'])); ?></p>
+        
+        <p>
+            <a href="auth/logout.php">Logout</a>
+        </p>
     </main>
     
     <?php include 'includes/footer.php'; ?>
