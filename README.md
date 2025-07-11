@@ -80,7 +80,7 @@ c:\xampp\htdocs\login\
 ### Authentication
 - `auth/login_process.php` - Handles login form submission
 - `auth/register_process.php` - Handles registration form submission
-- `auth/logout.php` - Logs user out and destroys session
+- `logout.php` - Logs user out and destroys session
 - `auth/forgot_password_process.php` - Handles password reset requests
 - `auth/reset_password_process.php` - Handles password reset form submission
 

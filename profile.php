@@ -38,9 +38,7 @@ $user = getCurrentUser();
         <p><strong>Email:</strong> <?php echo e($user['email']); ?></p>
         <p><strong>Member Since:</strong> <?php echo date('F j, Y', strtotime($user['created_at'])); ?></p>
         
-        <p>
-            <a href="auth/logout.php">Logout</a>
-        </p>
+        <!-- Logout link removed from profile page - logout is available in the header sub-navigation -->
     </main>
     
     <?php include 'includes/footer.php'; ?>

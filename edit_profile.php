@@ -124,8 +124,8 @@ if (!$user) {
             </div>
             
             <p>
-                <a href="profile.php">Back to Profile</a> | 
-                <a href="auth/logout.php">Logout</a>
+                <a href="profile.php">Back to Profile</a>
+                <!-- Logout link removed - logout is available in the header sub-navigation -->
             </p>
     </main>
     
