@@ -31,7 +31,7 @@ if (!empty($token)) {
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <?php include 'includes/header-new.php'; ?>
     
     <main class="main-content">
         <div class="login-container">

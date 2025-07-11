@@ -16,13 +16,15 @@ if (!$user) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile - Login System</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <?php include 'includes/header-new.php'; ?>
     
     <main class="main-content">
-        <h1>Edit Profile</h1>
-        <p>Update your profile information and change your password.</p>
+        <div class="login-container">
+            <h2>Edit Profile</h2>
             
             <?php if (isset($_GET['error'])): ?>
                 <div class="error-message">
@@ -76,57 +78,42 @@ if (!$user) {
                 </div>
             <?php endif; ?>
             
-            <div class="edit-profile-sections">
-                <!-- Basic Information Section -->
-                <div class="edit-section">
-                    <h3>Basic Information</h3>
-                    <form action="auth/update_profile_process.php" method="POST" class="edit-form">
-                        <input type="hidden" name="action" value="update_basic">
-                        
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" required value="<?php echo e($user['username']); ?>">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email" required value="<?php echo e($user['email']); ?>">
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Update Basic Info</button>
-                    </form>
+            <!-- Single Form for All Updates -->
+            <form action="auth/update_profile_process.php" method="POST">
+                <input type="hidden" name="action" value="update_all">
+                
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required value="<?php echo e($user['username']); ?>">
                 </div>
                 
-                <!-- Password Change Section -->
-                <div class="edit-section">
-                    <h3>Change Password</h3>
-                    <form action="auth/update_profile_process.php" method="POST" class="edit-form">
-                        <input type="hidden" name="action" value="change_password">
-                        
-                        <div class="form-group">
-                            <label for="current_password">Current Password:</label>
-                            <input type="password" id="current_password" name="current_password" required placeholder="Enter your current password">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="new_password">New Password:</label>
-                            <input type="password" id="new_password" name="new_password" required placeholder="Enter new password (min 6 characters)">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="confirm_password">Confirm New Password:</label>
-                            <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm new password">
-                        </div>
-                        
-                        <button type="submit" class="btn btn-warning">Change Password</button>
-                    </form>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required value="<?php echo e($user['email']); ?>">
                 </div>
-            </div>
+                
+                <div class="form-group">
+                    <label for="current_password">Current Password (required for changes):</label>
+                    <input type="password" id="current_password" name="current_password" placeholder="Enter current password to save changes">
+                </div>
+                
+                <div class="form-group">
+                    <label for="new_password">New Password (optional):</label>
+                    <input type="password" id="new_password" name="new_password" placeholder="Leave blank to keep current password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_password">Confirm New Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password if changing">
+                </div>
+                
+                <button type="submit" class="login-btn">Update Profile</button>
+            </form>
             
-            <p>
+            <div class="form-links">
                 <a href="profile.php">Back to Profile</a>
-                <!-- Logout link removed - logout is available in the header sub-navigation -->
-            </p>
+            </div>
+        </div>
     </main>
     
     <?php include 'includes/footer.php'; ?>

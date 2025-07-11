@@ -15,7 +15,7 @@ $user = getCurrentUser();
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'includes/header-clean.php'; ?>
+    <?php include 'includes/header-new.php'; ?>
     
     <main class="main-content">
         <h1>Welcome, <?php echo e($user['username']); ?>!</h1>
