@@ -4,10 +4,7 @@ requireLogin(); // Check if user is logged in
 
 // Get user information
 $user = getCurrentUser();
-if (!$user) {
-    header('Location: login.php');
-    exit();
-}
+// Removed the redundant redirect check since requireLogin() already handles this
 ?>
 <!DOCTYPE html>
 <html lang="en">
