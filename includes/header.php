@@ -1,11 +1,30 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
+if (session_stat        </div>
+    </div>
+</header>
+
+<?php if ($is_logged_in): ?>
+<div class="sub-header">
+    <div class="sub-header-content">
+        <div class="page-info">
+            Welcome back, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User'); ?>!
+        </div>
+        <div class="sub-header-actions">
+            <a href="settings.php" title="Settings">⚙</a>
+            <a href="notifications.php" title="Notifications">🔔</a>
+            <a href="logout.php" title="Logout">×</a>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+</div>N_NONE) {
     session_start();
 }
 $is_logged_in = isset($_SESSION['user_id']);
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
+<div class="header-container">
 <header class="header">
     <div class="header-content">
         <div class="logo">
@@ -31,9 +50,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             Welcome back, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User'); ?>!
         </div>
         <div class="sub-header-actions">
-            <a href="settings.php" title="Settings" class="settings-icon">⚙</a>
-            <a href="notifications.php" title="Notifications" class="settings-icon">🔔</a>
-            <a href="logout.php" title="Logout" class="logout-icon">×</a>
+            <a href="settings.php" title="Settings">⚙</a>
+            <a href="notifications.php" title="Notifications">🔔</a>
+            <a href="logout.php" title="Logout">×</a>
         </div>
     </div>
 </div>
