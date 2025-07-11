@@ -37,6 +37,36 @@ $user = getCurrentUser();
         <p><strong>Username:</strong> <?php echo e($user['username']); ?></p>
         <p><strong>Email:</strong> <?php echo e($user['email']); ?></p>
         <p><strong>Member Since:</strong> <?php echo date('F j, Y', strtotime($user['created_at'])); ?></p>
+
+        <p><strong>Points:</strong> <span id="points-value"><?php echo isset($user['points']) ? (int)$user['points'] : 0; ?></span></p>
+
+        <script>
+        function fetchUserPoints() {
+            fetch('get_user_points.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && typeof data.points !== 'undefined') {
+                        document.getElementById('points-value').textContent = data.points;
+                    }
+                });
+        }
+        setInterval(fetchUserPoints, 5000);
+        </script>
+
+        <script>
+        function incrementPoints() {
+            fetch('increment_points.php', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && typeof data.points !== 'undefined') {
+                        document.getElementById('points-value').textContent = data.points;
+                    }
+                });
+        }
+        setInterval(incrementPoints, 5000);
+        </script>
+
+        <!-- Progress bar removed -->
         
         <!-- Logout link removed from profile page - logout is available in the header sub-navigation -->
     </main>

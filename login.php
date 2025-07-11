@@ -11,7 +11,7 @@ redirectIfLoggedIn(); // Redirect if already logged in
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'includes/header-clean.php'; ?>
+    <?php include 'includes/header-new.php'; ?>
     
     <main class="main-content">
         <div class="login-container">

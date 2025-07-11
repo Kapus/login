@@ -33,7 +33,7 @@ function getCurrentUser() {
     
     require_once 'config/database.php';
     try {
-        $stmt = $pdo->prepare("SELECT id, username, email, created_at FROM users WHERE id = ?");
+        $stmt = $pdo->prepare("SELECT id, username, email, created_at, points FROM users WHERE id = ?");
         $stmt->execute([$_SESSION['user_id']]);
         return $stmt->fetch();
     } catch(PDOException $e) {
