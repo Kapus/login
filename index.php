@@ -10,7 +10,7 @@ require_once 'includes/functions.php';
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <?php include 'includes/header-new.php'; ?>
     
     <main class="main-content">
         <?php if (isset($_GET['logout']) && $_GET['logout'] === 'success'): ?>

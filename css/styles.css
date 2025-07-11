@@ -39,13 +39,14 @@ body {
 
 .nav {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 16px;
     transition: opacity 0.3s ease;
 }
 
@@ -64,21 +65,21 @@ body {
     width: 100%;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-bottom: 1px solid #dee2e6;
-    padding: 3px 0;
+    padding: 12px 0;
     position: relative;
 }
 
 .sub-header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .page-info {
-    font-size: 11px;
+    font-size: 14px;
     color: #6c757d;
     font-style: italic;
 }
@@ -86,12 +87,13 @@ body {
 .sub-header-actions {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .settings-icon {
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: none;
-    padding: 3px;
+    padding: 6px;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
@@ -104,13 +106,13 @@ body {
 
 /* Logout Icon Styles */
 .logout-icon {
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: none;
-    padding: 3px;
+    padding: 6px;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 .logout-icon:hover {
@@ -120,10 +122,11 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    padding: 40px 20px;
+    padding: 60px 30px;
     max-width: 1200px;
     margin: 0 auto;
     flex: 1;
+    text-align: center;
 }
 
 /* Login Form Styles */
